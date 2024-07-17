@@ -1,0 +1,16 @@
+{
+  "name": "my-custom-create-app",
+  "version": "1.0.0",
+  "description": "my custom react npm package",
+  "main": "index.js",
+ "bin": {
+    "my-custom-create-app": "./index.js"
+  },
+  "keywords": [],
+  "author": "Abhinav Choudhary",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "inquirer": "^10.0.2"
+  }
+}
