@@ -1,0 +1,20 @@
+node_modules/
+*.log
+.git/
+.idea/
+.vscode/
+dist/
+.DS_Store
+
+# Ignore test files and directories
+tests/
+*.test.js
+*.spec.js
+
+# Ignore build and config files
+webpack.config.js
+.babelrc
+.gitignore
+
+# Ignore other unwanted files or directories
+*.md
