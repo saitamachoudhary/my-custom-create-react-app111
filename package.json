@@ -1,21 +1,24 @@
 {
-  "name": "my-custom-create-app-here",
-  "version": "1.0.0",
+  "name": "my-custom-create-react-app111",
+  "version": "1.0.17",
   "description": "my custom react npm package",
   "main": "index.js",
+  "type": "module",
   "files": [
+    "bin/",
     "index.js",
     "template/",
     "README.md"
   ],
- "bin": {
-    "my-custom-create-app-here": "./index.js"
+  "bin": {
+    "my-custom-create-react-app111": "./bin/index.js"
   },
   "keywords": [],
   "author": "Abhinav Choudhary",
   "license": "ISC",
   "dependencies": {
-    "fs-extra": "^11.2.0",
-    "inquirer": "^10.0.2"
+    "@inquirer/prompts": "^5.3.2",
+    "fs-extra": "^11.2.0"
   }
 }
+

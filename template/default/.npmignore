@@ -6,13 +6,9 @@ node_modules/
 dist/
 .DS_Store
 
-# Ignore test files and directories
-tests/
-*.test.js
-*.spec.js
+
 
 # Ignore build and config files
-
 .gitignore
 
 # Ignore other unwanted files or directories

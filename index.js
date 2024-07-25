@@ -1,50 +1,29 @@
-// #!/usr/bin/env node
 
-// const fs = require('fs-extra');
-// const path = require('path');
-// const inquirer = require('inquirer');
-// const { execSync } = require('child_process');
+import { input } from '@inquirer/prompts';
+import path,{ dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { execSync } from 'child_process';
+import fs from 'fs-extra';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const TEMPLATE_PATH=path.join(__dirname,'template','default');
 
-// const TEMPLATE_PATH = path.join(__dirname, 'templates', 'default');
+async function createApp() {
 
-// async function createApp() {
-//   const answers = await inquirer.prompt([
-//     {
-//       type: 'input',
-//       name: 'name',
-//       message: 'What is your project name?',
-//       default: 'my-app',
-//     },
-//   ]);
+const answer = await input({ 
+    name: 'name',
+    message: 'What is your project name?',
+    default: 'my-app',
+});
 
-//   const targetPath = path.join(process.cwd(), answers.name);
-//   await fs.copy(TEMPLATE_PATH, targetPath);
-
-//   console.log(`Success! Created ${answers.name} at ${targetPath}`);
-
-//   console.log('Installing dependencies...');
-//   execSync('npm install', { stdio: 'inherit', cwd: targetPath });
-
-//   console.log('All done! You can now start your project with:');
-//   console.log(`  cd ${answers.name}`);
-//   console.log('  npm start');
-// }
-
-// createApp().catch(err => console.error(err));
-const inquirer = require('inquirer');
-
-async function testInquirer() {
-  const answers = await inquirer.prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What is your project name?',
-      default: 'my-app',
-    },
-  ]);
-
-  console.log(`Project name: ${answers.name}`);
+ const targetPath=path.join(process.cwd(),answer);
+ await fs.copy(TEMPLATE_PATH,targetPath);
+ console.log(`Success! Created ${answer} at ${targetPath}`);
+ console.log('Installing dependencies...');
+ execSync('npm install', { stdio: 'inherit', cwd: targetPath });
+ console.log('All done! You can now start your project with:');
+ console.log(`cd ${answer}`);
+ console.log('npm start');
 }
 
-testInquirer().catch(err => console.error(err));
-
+export default createApp;
