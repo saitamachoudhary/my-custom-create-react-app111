@@ -1,6 +1,6 @@
 {
   "name": "my-custom-create-react-app111",
-  "version": "1.0.17",
+  "version": "1.0.22",
   "description": "my custom react npm package",
   "main": "index.js",
   "type": "module",
@@ -21,4 +21,3 @@
     "fs-extra": "^11.2.0"
   }
 }
-

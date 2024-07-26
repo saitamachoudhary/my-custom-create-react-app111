@@ -5,8 +5,8 @@ node_modules/
 .vscode/
 dist/
 .DS_Store
-
-
+build/
+.env
 
 # Ignore build and config files
 .gitignore

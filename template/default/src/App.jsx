@@ -1,7 +1,10 @@
-import React from 'react';
-
+import React from "react";
 const App = () => {
-  return <div>Hello, World!</div>;
+  return (
+    <div className="ParentStyling">
+      <h1 className="h1Styling">Custom React App</h1>
+    </div>
+  );
 };
 
 export default App;
